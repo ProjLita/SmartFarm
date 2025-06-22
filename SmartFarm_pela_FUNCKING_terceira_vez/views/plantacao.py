@@ -2,6 +2,8 @@
 import flet as ft
 
 def ProfileView(router_data=None):
+
+     back_button = ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda e: e.page.go("/smartfarm1"))
      
     saude = ft.Column(
                 [
@@ -39,19 +41,14 @@ def ProfileView(router_data=None):
                     ,spacing=-2
                 )
     editar = ft.ElevatedButton(
-                        "Editar plantação",
-                        style=ft.ButtonStyle(
-                            bgcolor=ft.LinearGradient(
-                                begin=ft.alignment.center_left,
-                                end=ft.alignment.center_right,
-                                colors=["#00FF88", "#FFD600"],
-                            ),
-                            color="black",
-                            shape=ft.RoundedRectangleBorder(radius=20),
-                            padding=20,
-                        ),
-                    )
-    back_button = ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda e: e.page.go("/smartfarm1"))
+                  "Editar plantação",
+                  color=ft.Colors.WHITE,
+                  bgcolor=ft.Colors.GREEN_400,
+                  expand=True,
+                  height=45,
+                  style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=40)),
+              )
+   
 
     content=ft.Column(  
                 controls=[
@@ -94,7 +91,12 @@ def ProfileView(router_data=None):
                             data_plantio
                         ],
                     ),
-                    #editar
+                    ft.Row(
+                        controls=[
+                            editar
+                        ],
+                        alignment=ft.MainAxisAlignment.CENTER,
+                    ), 
                 ],
                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 spacing=20
