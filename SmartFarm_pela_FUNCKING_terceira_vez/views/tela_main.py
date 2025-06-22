@@ -8,25 +8,56 @@ def IndexView(page: ft.Page):
 
     # Botão Minha SmartFarm
     smartfarm_button = ft.ElevatedButton(
-        "Minha SF 1",
+        content=ft.Column(
+            controls=[
+                ft.Text("Minha", size=14),
+                ft.Text("SmartFarm 1", size=14),
+                ft.Icon(name=ft.Icons.KEYBOARD_ARROW_RIGHT_OUTLINED, size=27)
+            ],
+        alignment=ft.MainAxisAlignment.CENTER,
+        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+        spacing=-2
+    ),            
         expand=True,
-        height=120,
+        height=110,
         style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=15)),
         on_click=lambda e: e.page.go("/smartfarm1")
     )
+
     smartfarm_button_2 = ft.ElevatedButton(
-        "Minha SF 2",
+        content=ft.Column(
+            controls=[
+                ft.Text("Minha", size=14),
+                ft.Text("SmartFarm 2", size=14),
+                ft.Icon(name=ft.Icons.KEYBOARD_ARROW_RIGHT_OUTLINED, size=27)
+            ],
+        alignment=ft.MainAxisAlignment.CENTER,
+        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+        spacing=-2
+    ), 
         expand=True,
-        height=120,
-        style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=15)),
-    )
-    add_smartfarm = ft.ElevatedButton(
-        "Adicionar SmartFarm",
-        expand=True,
-        height=120,
+        height=110,
         style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=15)),
     )
 
+    add_smartfarm = ft.ElevatedButton(
+        content=ft.Column(
+            controls=[
+                ft.Text("Adicionar", size=14),
+                ft.Text("SmartFarm", size=14),
+                ft.Text(" ", size=6),
+                ft.Icon(name=ft.Icons.ADD_BOX_SHARP, size=16)
+            ],
+            alignment=ft.MainAxisAlignment.CENTER,
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            spacing=-2,    
+        ), 
+        expand=True,
+        height=110,
+        style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=15)),
+    )
+
+    
     # Reservatórios
 # Reservatório 1 com gradiente azul (75% forte, 25% fraco)
     reservatorio1 = ft.Container(
@@ -121,53 +152,111 @@ def IndexView(page: ft.Page):
         expand=1
     )
 
+
+    # Status da minha Farm
+    minha_farm= ft.Container(
+                    content=ft.Row(
+                        controls=[
+                            ft.Container(
+                                width=1,
+                                height=70,
+                                bgcolor=ft.Colors.GREY,
+                            ),
+                            ft.Column(
+                                controls=[
+                                    ft.Text("Morango", weight=ft.FontWeight.BOLD, size=17),
+                                    ft.Text(" ", size=2),
+                                    ft.Text("SmartFarm 1", size=11,),
+                                    ft.Text(" ", size=5),
+                                    ft.Text("Próxima colheita:", weight=ft.FontWeight.BOLD, size=17),
+                                    ft.Text("2 dias", weight=ft.FontWeight.BOLD, size=17)
+                                ],
+                                alignment=ft.MainAxisAlignment.CENTER,
+                                spacing=-2
+                            ),
+                        ],
+                        alignment=ft.MainAxisAlignment.SPACE_EVENLY,                        
+                        spacing=5
+                    ),
+                    expand=True,
+                    height=110,
+                    border=ft.border.all(2, ft.Colors.GREY_200),
+                    border_radius=10,
+                    alignment=ft.alignment.center,
+                    on_click=lambda e: e.page.go("/plantacao")
+                )
+
     # Layout principal
     content = ft.Column(
         controls=[
             ft.Column(
                 controls=[
-                    ft.Text("Olá LITA", weight=ft.FontWeight.BOLD, size=30),
-                    ft.Text("Minhas SmartFarms", weight=ft.FontWeight.BOLD, size=15)
-                ]
-            ),
-            ft.Row(
-                controls=[smartfarm_button, smartfarm_button_2],
-                spacing=20,
-                alignment=ft.MainAxisAlignment.CENTER
-            ),
-            ft.Row(
-                controls=[add_smartfarm],
-                alignment=ft.MainAxisAlignment.CENTER
+                    ft.Text("Olá LITA", weight=ft.FontWeight.BOLD, size=24),
+                    ft.Row(
+                        controls=[
+                            ft.Icon(name=ft.Icons.WB_SUNNY_OUTLINED,size=12,),
+                            ft.Text("24°C", weight=ft.FontWeight.BOLD, size=12)
+                        ]
+                    ),
+                ],
+                spacing=-3,
             ),
             ft.Column(
                 controls=[
-                    ft.Text("Nível da água no reservatório", weight=ft.FontWeight.BOLD, size=15),
+                    ft.Text("Minhas SmartFarms", weight=ft.FontWeight.BOLD, size=13),
                     ft.Row(
-                        controls=[reservatorio1, reservatorio2],
-                        spacing=20
-                    )
-                ]
+                        controls=[smartfarm_button, smartfarm_button_2,],
+                        spacing=20,
+                    ),
+                    ft.Row(
+                        controls=[add_smartfarm, ft.Container()],
+                        alignment=ft.MainAxisAlignment.START,
+                    ),
+                ],
+                spacing=10       
+            ), 
+            ft.Column(   
+                controls=[
+                    ft.Text("Nível da água no reservatório", weight=ft.FontWeight.BOLD, size=13),
+                    ft.Column(
+                        controls=[
+                            ft.Row( 
+                                controls=[reservatorio1, reservatorio2,],
+                                spacing=20
+                                ),
+                            ft.Row(
+                                controls=[ texto1, texto2]
+                            ) 
+                        ],
+                        spacing=5,
+                    )            
+                ],
+                spacing=10
             ),
-            ft.Row(controls=[texto1, texto2]),
             ft.Column(
                 controls=[
-                    ft.Text("Umidade do solo", weight=ft.FontWeight.BOLD, size=15),
-                    ft.Row(
+                    ft.Text("Umidade do solo", weight=ft.FontWeight.BOLD, size=13),
+                    ft.Row( 
                         controls=[umidade1, umidade2],
                         spacing=20
-                    )
-                ]
-            ),
-            ft.Column(
-                controls=[
-                    ft.Text("Status da minha Farm", weight=ft.FontWeight.BOLD, size=15),
+                    ),
                     ft.Row(
-                        controls=[],  # preencher futuramente
-                        spacing=20
-                    )
-                ]
-            )
-        ]
-    )
+                        controls=[texto1, texto2]
+                    )  
+                ],
+                spacing=5
+            ),
+            ft.Column(   
+                controls=[
+                    ft.Text("Status da minha Farm", weight=ft.FontWeight.BOLD, size=13),
+                    ft.Row(  
+                            controls=[minha_farm ],
+                            spacing=20
+                        )   
+                    ],
+                ),
+            ],
+            spacing=25
+        )
 
     return content
