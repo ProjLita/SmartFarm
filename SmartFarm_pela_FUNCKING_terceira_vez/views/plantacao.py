@@ -40,14 +40,25 @@ def ProfileView(router_data=None):
                     ]
                     ,spacing=-2
                 )
-    editar = ft.ElevatedButton(
-                  "Editar plantação",
-                  color=ft.Colors.WHITE,
-                  bgcolor=ft.Colors.GREEN_400,
-                  expand=True,
-                  height=45,
-                  style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=40)),
-              )
+    editar = ft.Container(
+        gradient=ft.LinearGradient(
+            begin=ft.alignment.center_left,
+            end=ft.alignment.center_right,
+            colors=["#45FF96", "#FFCB21"],
+            stops=[0.0, 0.85]
+        ),
+        expand=True,
+        height=45,
+        border_radius=40,
+        content=ft.ElevatedButton(
+            content=ft.Text("Editar plantação", size=17),
+            style=ft.ButtonStyle(
+                color=ft.Colors.WHITE,
+                bgcolor=ft.Colors.TRANSPARENT,
+                shape=ft.RoundedRectangleBorder(radius=15)
+            )
+        )
+    )
    
 
     content=ft.Column(  
