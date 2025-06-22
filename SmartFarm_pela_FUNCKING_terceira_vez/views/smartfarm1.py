@@ -240,7 +240,7 @@ def smartfarm1(router_data=None):
                 controls=[
                 back_button,
                 ft.Text(
-                "SmartFarm 1 - Visão Geral",
+                "Farm1 - Visão Geral",
                 size=20,
                 weight=ft.FontWeight.BOLD,
                 text_align=ft.TextAlign.CENTER
