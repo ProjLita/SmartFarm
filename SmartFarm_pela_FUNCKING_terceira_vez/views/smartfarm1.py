@@ -205,13 +205,24 @@ def smartfarm1(router_data=None):
                     on_click=lambda e: e.page.go("/plantacao")
                 )
 
-    editar_farm = ft.ElevatedButton(
-        "Editar SmartFarm",
-        color=ft.Colors.WHITE,
-        bgcolor=ft.Colors.GREEN_400,
+    editar_farm = ft.Container(
+        gradient=ft.LinearGradient(
+            begin=ft.alignment.center_left,
+            end=ft.alignment.center_right,
+            colors=["#45FF96", "#FFCB21"],
+            stops=[0.0, 0.85]
+        ),
         expand=True,
         height=45,
-        style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=40)),
+        border_radius=40,
+        content=ft.ElevatedButton(
+            content=ft.Text("Editar SmartFarm", size=17),
+            style=ft.ButtonStyle(
+                color=ft.Colors.WHITE,
+                bgcolor=ft.Colors.TRANSPARENT,
+                shape=ft.RoundedRectangleBorder(radius=15)
+            )
+        )
     )
 
     camera = ft.Container(
