@@ -61,56 +61,66 @@ def ProfileView(router_data=None):
     )
    
 
-    content=ft.Column(  
+    content=ft.Column(
                 controls=[
-                    ft.Row(
-                    controls=[back_button],
-                    alignment=ft.MainAxisAlignment.START
-                    ),
-                    ft.Text("Morango", size=24, weight=ft.FontWeight.BOLD),
-                    ft.Text("Fragaria", size=14, color=ft.Colors.GREY),
-                    ft.Divider(),
-                    ft.Row(
+                    ft.Column(
                         controls=[
-                            ft.Icon(ft.Icons.HEALTH_AND_SAFETY, color="orange"),
-                            saude,
-                            ft.Icon(ft.Icons.INFO_OUTLINE, color="orange", size=16),
-                        ],
-                        alignment=ft.MainAxisAlignment.START,
+                            ft.Row(
+                            controls=[back_button],
+                            alignment=ft.MainAxisAlignment.START
+                            ),
+                            ft.Column(
+                                controls=[
+                                    ft.Text("Morango", size=24, weight=ft.FontWeight.BOLD),
+                                    ft.Text("Fragaria", size=14, color=ft.Colors.GREY),
+                                    ft.Divider(),
+                                ],
+                            horizontal_alignment=ft.CrossAxisAlignment.CENTER,    
+                            ),                  
+                            ft.Column(
+                                controls=[
+                                    ft.Row(
+                                        controls=[
+                                            ft.Icon(ft.Icons.HEALTH_AND_SAFETY, color="orange"),
+                                            saude,
+                                            ft.Icon(ft.Icons.INFO_OUTLINE, color="orange", size=16),
+                                        ],
+                                        alignment=ft.MainAxisAlignment.START,
+                                    ),
+                                    ft.Row(
+                                        controls=[
+                                            ft.Icon(ft.Icons.ECO_OUTLINED),
+                                            ambiente
+                                        ],                   
+                                    ),
+                                    ft.Row(
+                                        controls=[
+                                            ft.Icon(ft.Icons.CALENDAR_MONTH_OUTLINED),
+                                            colheita
+                                        ],
+                                    ),
+                                    ft.Row(
+                                        controls=[
+                                            ft.Icon(ft.Icons.OPACITY),
+                                            umidade
+                                        ],
+                                    ),
+                                    ft.Row(
+                                        controls=[
+                                            ft.Icon(ft.Icons.EVENT_AVAILABLE_OUTLINED),
+                                            data_plantio
+                                        ],
+                                    ),        
+                                ]
+                            )                           
+                        ]                       
                     ),
                     ft.Row(
-                        controls=[
-                            ft.Icon(ft.Icons.ECO_OUTLINED),
-                            ambiente
-                        ],                   
-                    ),
-                    ft.Row(
-                        controls=[
-                            ft.Icon(ft.Icons.CALENDAR_MONTH_OUTLINED),
-                            colheita
-                        ],
-                    ),
-                    ft.Row(
-                        controls=[
-                            ft.Icon(ft.Icons.OPACITY),
-                            umidade
-                        ],
-                    ),
-                    ft.Row(
-                        controls=[
-                            ft.Icon(ft.Icons.EVENT_AVAILABLE_OUTLINED),
-                            data_plantio
-                        ],
-                    ),
-                    ft.Row(
-                        controls=[
-                            editar
-                        ],
+                        controls=[editar],
                         alignment=ft.MainAxisAlignment.CENTER,
-                    ), 
+                    ),    
                 ],
-                horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                spacing=20
+                spacing=60                  
             )       
         
 
