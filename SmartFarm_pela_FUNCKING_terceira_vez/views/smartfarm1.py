@@ -171,9 +171,7 @@ def smartfarm1(router_data=None):
     alignment=ft.alignment.center,
 )
 
-
-
-    minha_plant= ft.Container(
+    minha_plant= ft.ElevatedButton(
                     content=ft.Row(
                         controls=[
                             ft.Container(
@@ -199,9 +197,7 @@ def smartfarm1(router_data=None):
                     ),
                     expand=True,
                     height=110,
-                    border=ft.border.all(2, ft.Colors.GREY_200),
-                    border_radius=10,
-                    alignment=ft.alignment.center,
+                    style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=15)),
                     on_click=lambda e: e.page.go("/plantacao")
                 )
 
