@@ -67,31 +67,38 @@ def smartfarm1(router_data=None):
     back_button = ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda e: page.go("/"))
 
     primavera = ft.Container(
-    content=ft.Column(
-        controls=[
-            ft.Text(
-                "Primavera", 
-                size=24, 
-                weight=ft.FontWeight.BOLD,
-                color=ft.Colors.BLACK
-            ),
-            ft.Text(
-                "3", 
-                size=40, 
-                weight=ft.FontWeight.BOLD,
-                color=ft.Colors.BLACK
-            )
-        ],
-        alignment=ft.MainAxisAlignment.CENTER,
-        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-        spacing=-6
-    ),
-    expand=True,
-    height=120,
-    bgcolor=ft.Colors.PINK_100,
-    border_radius=10,
-    alignment=ft.alignment.center,
-)
+        content=ft.Column(
+            controls=[
+                # Adicionando a imagem ao início da coluna
+                ft.Image(
+                    src="./assets/5405-logo-1739201379.077color-ffa6a6.svg",  # Substitua pelo caminho correto
+                    fit=ft.ImageFit.COVER,  # A imagem vai cobrir o container
+                    expand=True,
+                ),
+                ft.Text(
+                    "Primavera", 
+                    size=24, 
+                    weight=ft.FontWeight.BOLD,
+                    color=ft.Colors.BLACK
+                ),
+                ft.Text(
+                    "3", 
+                    size=40, 
+                    weight=ft.FontWeight.BOLD,
+                    color=ft.Colors.BLACK
+                ),
+            ],
+            alignment=ft.MainAxisAlignment.CENTER,
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            spacing=-6
+        ),
+        expand=True,
+        height=120,
+        bgcolor=ft.Colors.PINK_100,
+        border_radius=10,
+        alignment=ft.alignment.center,
+    )
+
     verao = ft.Container(
     content=ft.Column(
         controls=[
@@ -309,3 +316,4 @@ def smartfarm1(router_data=None):
         ],
         alignment=ft.MainAxisAlignment.CENTER
     )
+
