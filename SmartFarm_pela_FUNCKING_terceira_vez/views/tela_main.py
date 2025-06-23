@@ -154,7 +154,7 @@ def IndexView(page: ft.Page):
 
 
     # Status da minha Farm
-    minha_farm= ft.Container(
+    minha_farm= ft.ElevatedButton(
                     content=ft.Row(
                         controls=[
                             ft.Container(
@@ -180,11 +180,10 @@ def IndexView(page: ft.Page):
                     ),
                     expand=True,
                     height=110,
-                    border=ft.border.all(2, ft.Colors.GREY_200),
-                    border_radius=10,
-                    alignment=ft.alignment.center,
+                    style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=15)),
                     on_click=lambda e: e.page.go("/plantacao")
                 )
+
 
     # Layout principal
     content = ft.Column(
