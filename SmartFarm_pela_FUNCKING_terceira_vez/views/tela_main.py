@@ -132,7 +132,7 @@ def IndexView(page: ft.Page):
         height=120,
         expand=True,
         content=ft.ElevatedButton(
-            content=ft.Text("Seca", size=24, weight=ft.FontWeight.BOLD),
+            content=ft.Text("REGULAR", size=24, weight=ft.FontWeight.BOLD),
             style=ft.ButtonStyle(
                 color=ft.Colors.WHITE,
                 bgcolor=ft.Colors.TRANSPARENT,
