@@ -209,7 +209,7 @@ def IndexView(page: ft.Page):
                         spacing=20,
                     ),
                     ft.Row(
-                        controls=[add_smartfarm, ft.Container()],
+                        controls=[add_smartfarm],
                         alignment=ft.MainAxisAlignment.START,
                     ),
                 ],
