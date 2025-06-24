@@ -184,115 +184,6 @@ def IndexView(page: ft.Page):
                     on_click=lambda e: e.page.go("/plantacao")
                 )
 
-
-
-    video1 = ft.ElevatedButton(
-        content=ft.Row(  # O Row pode conter os elementos que você precisa
-            controls=[  
-                # Container com a imagem (será o fundo)
-                ft.Container(
-                    expand=True,  # A imagem vai ocupar todo o espaço disponível
-                    height=120,   # Altura do container para a imagem
-                    border_radius=15,  # Bordas arredondadas
-                    content=ft.Image(
-                        src="./assets/jovem_jardineira_sorridente.jpg",  # Substitua pelo caminho correto
-                        fit=ft.ImageFit.COVER,  # A imagem vai cobrir o container
-                        expand=True,
-                    ),
-                ),
-                # Texto sobre a imagem
-                ft.Container(
-                    expand=True,
-                    padding=10,
-                    alignment=ft.alignment.bottom_left,
-                    content=ft.Column(
-                        controls=[
-                            ft.Text("Como limpar sua", size=16, color="white"),
-                            ft.Text(" ", size=-8),
-                            ft.Text("SmartFarm?", size=19, color="white", weight=ft.FontWeight.BOLD)
-                        ]
-                    ),
-                ),
-                # Container com o botão sobre a imagem
-                ft.Container(
-                    border_radius=15,
-                    height=120,  # Mesma altura da imagem
-                    expand=True,
-                    padding=10,
-                    alignment=ft.alignment.center,
-                    content=ft.ElevatedButton(
-                        content=ft.Column(
-                            controls=[
-                                ft.IconButton(icon=ft.Icons.PLAY_CIRCLE_OUTLINE, icon_size=40)
-                            ]
-                        ),
-                        bgcolor=ft.Colors.TRANSPARENT,  # Fundo transparente
-                        expand=True,
-                    ),
-                ),
-            ],
-            expand=True,  # Faz com que o Row ocupe o espaço disponível na tela
-            height=120,   # Definindo a altura do Row para ser igual à altura da imagem
-            alignment=ft.alignment.center,  # Centraliza o conteúdo do Row
-        ),
-        style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=15)),
-        expand=True,  # Faz com que o botão ocupe o espaço disponível
-    )
-
-    video2 = ft.ElevatedButton(
-        content=ft.Row(
-        controls=[ 
-            # Container com a imagem (será o fundo)
-            ft.Container(
-                expand=True,  # A imagem vai ocupar todo o espaço disponível
-                #height=120,  # Altura do container para a imagem
-                border_radius=15,  # Bordas arredondadas
-                content=ft.Image(
-                    src="./assets/jovem_jardineira_sorridente.jpg",  # Substitua pelo caminho correto
-                    fit=ft.ImageFit.COVER,  # A imagem vai cobrir o container
-                    expand=True,
-                ),
-            ),
-            # Texto sobre a imagem
-            ft.Container(
-                expand=True,
-                padding=10,
-                alignment=ft.alignment.bottom_left,  # Centraliza o texto sobre a imagem
-                content=ft.Column(
-                    controls=[
-                        ft.Text("Como limpar sua", size=19, color="white"),
-                        ft.Text(" ", size=5),
-                        ft.Text("SmartFarm?", size=24, color="white")
-                    ]
-                ),
-            ),
-            # Container com o botão sobre a imagem
-            ft.Container(
-                border_radius=15,
-                height=110,
-                expand=True,
-                padding=10,
-                alignment=ft.alignment.center,
-                content=ft.ElevatedButton(
-                    content=ft.Column(
-                    controls=[
-                        ft.IconButton(icon=ft.Icons.PLAY_CIRCLE_OUTLINE,icon_size=40),
-                    ]
-                ),
-                 bgcolor=ft.Colors.TRANSPARENT,
-                 expand=True
-                ),
-            ),
-        ],
-        expand=True,  # Faz com que o Stack ocupe o espaço disponível na tela
-        height=120,  # Definindo a altura do Stack
-        alignment=ft.alignment.center,  # Centraliza o conteúdo do Stack      
-        ),
-        style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=15)),
-        expand=1
-    )
-    
-
     # Layout principal
     content = ft.Column(
         controls=[
@@ -358,15 +249,6 @@ def IndexView(page: ft.Page):
                     ft.Text("Status da minha Farm", weight=ft.FontWeight.BOLD, size=13),
                     ft.Row(  
                             controls=[minha_farm ],
-                            spacing=20
-                        )   
-                    ],
-            ),
-            ft.Column(   
-                controls=[
-                    ft.Text("Dicas", weight=ft.FontWeight.BOLD, size=13),
-                    ft.Row(  
-                            controls=[video1, video2 ],
                             spacing=20
                         )   
                     ],
